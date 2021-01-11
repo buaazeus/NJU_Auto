@@ -6,6 +6,8 @@ ML-Agents==0.5.0
 tensorflow==1.7.1
 ....  
 Unity 版本 2018.3.10f1 (64-bit)  
+
+Scripts中的cs脚本需存放在unity的project 的assets下。
 unity项目文件  
 QRSmartCar-v1.1\QREnv\Assets\HFReal  
 unity中需安装ML-Agents，可在packages中安装  
