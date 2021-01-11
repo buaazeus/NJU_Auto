@@ -6,6 +6,9 @@ ML-Agents==0.5.0
 tensorflow==1.7.1
 ....  
 Unity 版本 2018.3.10f1 (64-bit)  
+unity 项目文件下载地址
+链接：https://pan.baidu.com/s/1JXRANyRP_nEvsQVILLLTTA 
+提取码：h4qd 
 
 Scripts中的cs脚本需存放在unity的project 的assets下。
 unity项目文件  
