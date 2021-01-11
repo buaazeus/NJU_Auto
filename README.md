@@ -1,10 +1,11 @@
 # NJU_Auto
 安装所需环境
-python==3.6
-....
-Unity 版本 2018.3.10f1 (64-bit)
-unity项目文件
-QRSmartCar-v1.1\QREnv\Assets\HFReal
+python==3.6  
+....  
+Unity 版本 2018.3.10f1 (64-bit)  
+unity项目文件  
+QRSmartCar-v1.1\QREnv\Assets\HFReal  
+unity中需安装ML-Agents 0.5.0
 
 模型放在hfreal\model\HFReal
 19万个样本训练量
