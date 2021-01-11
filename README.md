@@ -1,11 +1,13 @@
 # NJU_Auto
+主车策略训练文件  
 安装所需环境
 python==3.6  
+ML-Agents==0.5.0
 ....  
 Unity 版本 2018.3.10f1 (64-bit)  
 unity项目文件  
 QRSmartCar-v1.1\QREnv\Assets\HFReal  
-unity中需安装ML-Agents 0.5.0
+unity中需安装ML-Agents，可在packages中安装  
 
 模型放在hfreal\model\HFReal
 19万个样本训练量
