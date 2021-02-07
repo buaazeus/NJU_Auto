@@ -34,6 +34,16 @@ trainer.py为主训练文件
 python trainer.py
 
 模型文件放在SmartCar\src\hfreal\model\HFReal
+目前文件默认模型为5456384  
+可以在上面的路径中选择其他模型  
+通过修改checkpoint文件第一行model_checkpoint_path: "-5456384"即可
+如果需要从头开始重新训练，把checkpoint文件删除即可  
+
+# 生成linux训练环境文件
+由于训练环境是在windows下unity中创建的  
+训练时需要在linux服务器上进行  
+所以需要生成linux训练环境文件  
+打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如：  
 
 19万个样本训练量
 batch大小是512
