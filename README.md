@@ -1,6 +1,6 @@
 # NJU_Auto
-主车策略训练文件  
-安装所需环境
+# 主车策略训练文件  
+安装所需环境  
 python==3.6  
 ML-Agents==0.5.0  
 tensorflow==1.7.1
