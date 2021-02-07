@@ -90,15 +90,12 @@ a0 = pi
 第一次给文件夹权限
 chmod -R 777 linux/
 
-启动名字unity的python虚拟环境
-source activate unity
-运行QRSmartCar-v1.1\src\hfreal下面的train.py
 
-训练结束杀死进程
-ps -ef | grep python | grep -v grep | cut -c 9-15 | xargs kill -s 9
+SmartCar\src\hfreal下面的train.py
 
-从checkpoint恢复训练
-每个模型含有下面三个文件，将不需要的模型删除，checkpoint文件打开，第一行
+
+checkpoint会保存当前训练的模型进度，中断训练后，可以从checkpiont的模型位置恢复训练，观察训练效果时，也可以通过checkpoint的模型名更换所使用的模型。  
+每个模型含有下面三个文件，将不需要的模型删除，checkpoint文件打开，第一行  
 .data-00000-of-00001
 .index
 .meta
