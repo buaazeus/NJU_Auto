@@ -12,6 +12,7 @@ unity 项目文件下载地址
 
 
 解压文件 
+
 unity项目文件位置  
 SmartCar\Env  
 使用unity打开以上路径项目  
@@ -26,7 +27,14 @@ ML-Agents安装方法
 https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md  
 
 
-模型放在hfreal\model\HFReal
+训练代码路径  
+SmartCar\src\hfreal  
+trainer.py为主训练文件  
+在SmartCar\src\hfreal路径下运行即可开始训练/推断  
+python trainer.py
+
+模型文件放在SmartCar\src\hfreal\model\HFReal
+
 19万个样本训练量
 batch大小是512
 
