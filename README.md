@@ -4,16 +4,20 @@
 python==3.6  
 ML-Agents==0.5.0  
 tensorflow==1.7.1
-....  
+
 Unity 版本 2018.3.10f1 (64-bit)  
 unity 项目文件下载地址
 链接：https://pan.baidu.com/s/1JXRANyRP_nEvsQVILLLTTA 
 提取码：h4qd 
 
-Scripts中的cs脚本需存放在unity的project 的assets下。
-unity项目文件  
-QRSmartCar-v1.1\QREnv\Assets\HFReal  
+解压文件 
+unity项目文件位置  
+SmartCar\Env  
+使用unity打开以上路径项目  
+在unity中选择  
+Env\Assets\HFReal  
 unity中需安装ML-Agents，可在packages中安装  
+
 
 模型放在hfreal\model\HFReal
 19万个样本训练量
