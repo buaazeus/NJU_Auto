@@ -44,8 +44,8 @@ python trainer.py
 由于训练环境是在windows下unity中创建的  
 训练时需要在linux服务器上进行  
 所以需要生成linux训练环境文件  
-打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如：  
-
+打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如SmartCar\src\hfreal\linux\HFReal：  
+![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png) 
 19万个样本训练量
 batch大小是512
 
