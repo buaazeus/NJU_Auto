@@ -17,8 +17,13 @@ SmartCar\Env
 使用unity打开以上路径项目  
 在unity中选择  
 Env\Assets\HFReal  
-![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/1.png)
-unity中需安装ML-Agents，可在packages中安装  
+![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/1.png)  
+
+unity中需安装ML-Agents  
+项目文件中已经包含了ML-Agents-0.5.0，可以跳过以下步骤  
+ML-Agents安装方法   
+可在菜单栏，window--package manager中安装，也可以单独下载离线安装，安装步骤见为  
+https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md  
 
 
 模型放在hfreal\model\HFReal
