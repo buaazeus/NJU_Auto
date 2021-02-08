@@ -47,15 +47,15 @@ python trainer.py
 所以需要生成linux训练环境文件  
 由于第一次训练需要生成路径文件，需在windows下进行，生成的文件名为hfreal_path_xz.txt，存放在SmartCar\Env\下，将hfreal_path_xz.txt传至linux中的hfreal\下面即可  
 打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如SmartCar\src\hfreal\linux\HFReal：  
-![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png)
+![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png)  
 build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部分需打包上传至linux服务器，例如可以上传至hfreal/linux  
 然后就可以在linux服务器上进行训练了，训练生成的模型会保存在路径  
 将模型下载至windows下，可以进行推断，就可以观察模型的实际效果  
 （windows下也可以进行训练，受限于机器性能，训练速度较慢）  
 
 # trainer.py文件内容介绍  
-
-
+![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/3.png)  
+num_envs为同时开启环境数量，在linux服务器训练时，可设定为16，在windows推断时，设定为1.  
 
 # alg\policies.py介绍  
 pdparam = tf.concat([pi, pi * 0.0 - 0.5], axis=1)  
