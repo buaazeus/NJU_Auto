@@ -33,6 +33,7 @@ SmartCar\src\hfreal
 trainer.py为主训练文件  
 在SmartCar\src\hfreal路径下运行即可开始训练/推断  
 python trainer.py
+在linux下训练时，将SmartCar\src\hfreal文件夹上传即可    
 
 模型文件放在SmartCar\src\hfreal\model\HFReal
 目前文件默认模型为5456384  
@@ -46,7 +47,7 @@ python trainer.py
 所以需要生成linux训练环境文件  
 打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如SmartCar\src\hfreal\linux\HFReal：  
 ![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png)
-build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部分需打包上传至linux服务器，例如可以上传至HFReal/linux  
+build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部分需打包上传至linux服务器，例如可以上传至hfreal/linux  
 然后就可以在linux服务器上进行训练了，训练生成的模型会保存在路径  
 将模型下载至windows下，可以进行推断，就可以观察模型的实际效果  
 （windows下也可以进行训练，受限于机器性能，训练速度较慢）  
