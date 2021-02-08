@@ -45,7 +45,7 @@ python trainer.py
 由于训练环境是在windows下unity中创建的  
 训练时需要在linux服务器上进行  
 所以需要生成linux训练环境文件  
-由于第一次训练需要生成路径文件，需在windows下进行，生成的文件名为hfreal_path_xz.txt，存放在SmartCar\env\下，将hfreal_path_xz.txt传至linux中的hfreal\下面即可  
+由于第一次训练需要生成路径文件，需在windows下进行，生成的文件名为hfreal_path_xz.txt，存放在SmartCar\Env\下，将hfreal_path_xz.txt传至linux中的hfreal\下面即可  
 打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如SmartCar\src\hfreal\linux\HFReal：  
 ![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png)
 build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部分需打包上传至linux服务器，例如可以上传至hfreal/linux  
@@ -54,19 +54,12 @@ build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部
 （windows下也可以进行训练，受限于机器性能，训练速度较慢）  
 
 # trainer.py文件内容介绍  
-19万个样本训练量  
-batch大小是512  
 
-num_timesteps是总训练步长
-num_timesteps = 2e9
-如果训练后end，说明达到最大步长，需调高
+
 
 # alg\policies.py介绍  
 pdparam = tf.concat([pi, pi * 0.0 - 0.5], axis=1)  
 -0.5是log std，表示对网络输出的动作采样的log 方差，这个一开始训练设为-0.5就好，大概需要训练3e7步，3-4e7可以依次减小，可以根据buffer mean reward来判断，如果不怎么上升了，就可以减小，建议依次取-0.8, -1.2, -1.5, -1.8  
-
-Env下面的 hfreal_path_xz.txt 含有A* 算法生成的路径 上传到src的hfreal下面  
-SmartCar\src\hfreal下面所有文件传到服务器中/home/yf/project/unity/hfreal  
 
 
 服务器训练：
