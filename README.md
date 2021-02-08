@@ -33,6 +33,7 @@ SmartCar\src\hfreal
 trainer.py为主训练文件  
 在SmartCar\src\hfreal路径下运行即可开始训练/推断  
 python trainer.py
+等待终端中提示press start button， 此时需在unity中按开始按钮，正常的话车辆就开始训练了。  
 在linux下训练时，将SmartCar\src\hfreal文件夹上传即可    
 
 模型文件放在SmartCar\src\hfreal\model\HFReal
@@ -40,6 +41,10 @@ python trainer.py
 可以在上面的路径中选择其他模型  
 通过修改checkpoint文件第一行model_checkpoint_path: "-5456384"即可
 如果需要从头开始重新训练，把checkpoint文件删除即可  
+每个模型含有下面三个文件  
+.data-00000-of-00001  
+.index  
+.meta  
 
 # 生成linux训练环境文件
 由于训练环境是在windows下unity中创建的  
@@ -49,6 +54,8 @@ python trainer.py
 打开hfreal场景，菜单栏File--build settings，按下图选择，然后build，选择路径，例如SmartCar\src\hfreal\linux\HFReal：  
 ![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/2.png)  
 build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部分需打包上传至linux服务器，例如可以上传至hfreal/linux  
+第一次训练前需给文件夹运行权限  
+chmod -R 777 linux/  
 然后就可以在linux服务器上进行训练了，训练生成的模型会保存在路径  
 将模型下载至windows下，可以进行推断，就可以观察模型的实际效果  
 （windows下也可以进行训练，受限于机器性能，训练速度较慢）  
@@ -56,6 +63,7 @@ build完成后，会生成HFReal_Data文件夹和HFReal.x86_64文件，这两部
 # trainer.py文件内容介绍  
 ![image](https://github.com/buaazeus/NJU_Auto/blob/main/images/3.png)  
 num_envs为同时开启环境数量，在linux服务器训练时，可设定为16，在windows推断时，设定为1.  
+env_path为环境路径，在linux服务器训练时采用第一行，在windows推断时，采用第二行None  
 
 # alg\policies.py介绍  
 pdparam = tf.concat([pi, pi * 0.0 - 0.5], axis=1)  
@@ -80,17 +88,3 @@ train_model=False   不需要修改，if else实现
 env_path = None
 alg\policies.py中
 a0 = pi
-
-开始训练：
-第一次给文件夹权限
-chmod -R 777 linux/
-
-
-SmartCar\src\hfreal下面的train.py
-
-
-checkpoint会保存当前训练的模型进度，中断训练后，可以从checkpiont的模型位置恢复训练，观察训练效果时，也可以通过checkpoint的模型名更换所使用的模型。  
-每个模型含有下面三个文件，将不需要的模型删除，checkpoint文件打开，第一行  
-.data-00000-of-00001
-.index
-.meta
