@@ -66,9 +66,11 @@ num_envs为同时开启环境数量，在linux服务器训练时，可设定为1
 env_path为环境路径，在linux服务器训练时采用第一行，在windows推断时，采用第二行None  
 
 # alg\policies.py介绍  
+
 pdparam = tf.concat([pi, pi * 0.0 - 0.5], axis=1)  
 -0.5是log std，表示对网络输出的动作采样的log 方差，这个一开始训练设为-0.5就好，大概需要训练3e7步，3-4e7可以依次减小，可以根据buffer mean reward来判断，如果不怎么上升了，就可以减小，建议依次取-0.8, -1.2, -1.5, -1.8  
-
+a0 = self.pd.sample()，使用带有探索的策略，在linux上训练时使用   
+a0 = pi，确定的最优策略，在windows推断时使用  
 
 服务器训练：
 trainer.py文件
@@ -77,8 +79,8 @@ trainer.py文件
 	train_model=True  不需要修改，if else实现
 	env_path = "linux/" + dir + dir[:-1] + ".x86_64"
 
-alg\policies.py文件
-	a0 = self.pd.sample()
+
+	
 
 
 笔记本可视化推断：
@@ -87,4 +89,4 @@ nsteps=2**12
 train_model=False   不需要修改，if else实现
 env_path = None
 alg\policies.py中
-a0 = pi
+
